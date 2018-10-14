@@ -1,3 +1,5 @@
 param($path, $ifile, $ofile);
+
 $env:Path += $path;
-g++ $ifile -o $ofile -lpthread --std=c++11 -fdiagnostics-color=always -g
+if (-not (Test-Path ($path += "\\target"))) { mkdir $path; }
+&g++ $ifile -o $ofile -lpthread --std=c++17 -fdiagnostics-color=always -g;
