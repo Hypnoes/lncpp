@@ -6,10 +6,10 @@ const int SIZE = 60;
 int main(int argc, char const *argv[])
 {
     using namespace std;
-    string filename {argv[1]};
+    char filename[SIZE] {};
     ifstream inFile;
-    //cout <<"Enter name of data file: ";
-    //cin.getline(filename, SIZE);
+    cout <<"Enter name of data file: ";
+    cin.getline(filename, SIZE);
     inFile.open(filename);
     if (!inFile.is_open())
     {
